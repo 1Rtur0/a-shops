@@ -1,7 +1,7 @@
 Config               = {}
 
 Config.Align = 'bottom-right'
-Config.Webhook = 'https://discord.com/api/webhooks/1006387826717364304/6_IGLBIk0Ierr6VcQz6cHF70EFwitHzWnHaPuP_h0ITpRregWWkUMmMsk31GYV1c6MmO'
+Config.Webhook = ''
 
 
 -- Opciones
