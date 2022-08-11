@@ -1,13 +1,13 @@
 
-function Tienda()
+function Shop()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'badulaque', {
-		title    = 'Badulaque',
+		title    = 'Shops',
 		align    = 'bottom-right',
 		elements = {
-			{label = 'Comida Lista', value = 'comidalista'},
-			{label = 'Bebidas', value = 'bebidas'},
+			{label = 'Ready Meal', value = 'comidalista'},
+			{label = 'Drinks', value = 'bebidas'},
 			{label = 'Snacks', value = 'snacks'},
-			{label = 'Otros', value = 'otros'}
+			{label = 'Others', value = 'otros'}
 	}}, function(data, menu)
 		if data.current.value == 'otros' then
 			Otros()
@@ -29,7 +29,7 @@ function Otros(zone)
 	local elements = {}
 	ShopOpen = true
 
-	for k,v in ipairs(Config.ItemsOtros) do
+	for k,v in ipairs(Config.ItemsOthers) do
 		table.insert(elements, {
 			label = ('%s - <span style="color:green;">$%s</span>'):format(v.label, ESX.Math.GroupDigits(v.price)),
 			name  = v.label,
@@ -42,11 +42,11 @@ function Otros(zone)
 	ESX.UI.Menu.CloseAll()	
 	
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop', {
-		title = "Otros",
+		title = "Others",
 		align = Config.Align,
 		elements = elements
 	}, function(data, menu)
-		ESX.TriggerServerCallback('badulaques:ComprarOtros', function(bought)
+		ESX.TriggerServerCallback('shops:ComprarOtros', function(bought)
 		end, data.current.model,data.current.identifier)
 	end, function(data, menu)
 		ShopOpen = false
@@ -63,7 +63,7 @@ function Bebidas(zone)
 	local elements = {}
 	ShopOpen = true
 
-	for k,v in ipairs(Config.ItemsBebidas) do
+	for k,v in ipairs(Config.ItemsDrinks) do
 		table.insert(elements, {
 			label = ('%s - <span style="color:green;">$%s</span>'):format(v.label, ESX.Math.GroupDigits(v.price)),
 			name  = v.label,
@@ -76,11 +76,11 @@ function Bebidas(zone)
 	ESX.UI.Menu.CloseAll()	
 	
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop', {
-		title = "Bebidas",
+		title = "Drinks",
 		align = Config.Align,
 		elements = elements
 	}, function(data, menu)
-		ESX.TriggerServerCallback('badulaques:ComprarBebidas', function(bought)
+		ESX.TriggerServerCallback('shops:ComprarBebidas', function(bought)
 		end, data.current.model,data.current.identifier)
 	end, function(data, menu)
 		ShopOpen = false
@@ -114,7 +114,7 @@ function Snacks(zone)
 		align = Config.Align,
 		elements = elements
 	}, function(data, menu)
-		ESX.TriggerServerCallback('badulaques:ComprarSnacks', function(bought)
+		ESX.TriggerServerCallback('shops:ComprarSnacks', function(bought)
 		end, data.current.model,data.current.identifier)
 	end, function(data, menu)
 		ShopOpen = false
@@ -131,7 +131,7 @@ function ComidaLista(zone)
 	local elements = {}
 	ShopOpen = true
 
-	for k,v in ipairs(Config.ItemsComidaLista) do
+	for k,v in ipairs(Config.ItemsReadyMeal) do
 		table.insert(elements, {
 			label = ('%s - <span style="color:green;">$%s</span>'):format(v.label, ESX.Math.GroupDigits(v.price)),
 			name  = v.label,
@@ -144,11 +144,11 @@ function ComidaLista(zone)
 	ESX.UI.Menu.CloseAll()	
 	
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop', {
-		title = "Comida Lista",
+		title = "Ready Meals",
 		align = Config.Align,
 		elements = elements
 	}, function(data, menu)
-		ESX.TriggerServerCallback('badulaques:ComprarComidaLista', function(bought)
+		ESX.TriggerServerCallback('shops:ComprarComidaLista', function(bought)
 		end, data.current.model,data.current.identifier)
 	end, function(data, menu)
 		ShopOpen = false
