@@ -2,7 +2,7 @@ fx_version 'cerulean'
 games {'gta5'}
 
 author 'ARtuRO#0028'
-description 'Sistema de Badulaques Avanzado [ARtuRO#0028]'
+description 'Advanced Shops System [ARtuRO#0028]'
 
 client_scripts {
 	'@es_extended/locale.lua',
