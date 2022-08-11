@@ -13,7 +13,7 @@ end)
 CreateThread(function()
 	while true do
 		local sleep = 1000
-		for k, v in pairs(Config.Tiendas.Ubicaciones) do
+		for k, v in pairs(Config.Shops.Locations) do
 			local me = PlayerPedId()
 			local heading = GetEntityHeading(me)
 
@@ -25,11 +25,11 @@ CreateThread(function()
 
 				if GetDistanceBetweenCoords(GetEntityCoords(me),v) <= 1.8 and not IsPedDeadOrDying(me, true) then
 					if not IsPedInAnyVehicle(me, false) then
-						nativeText("Buenas, ¿en que le puedo ayudar?", 7000)
-						ESX.ShowHelpNotification("Usa ~INPUT_CONTEXT~ para abrir la Tienda")
+						nativeText("Hello, with what can I help you?", 7000)
+						ESX.ShowHelpNotification("Press ~INPUT_CONTEXT~ to open the store")
 
 						if IsControlJustReleased(0, 38) then
-							Tienda()
+							Shop()
 						end 
 
 					end
@@ -44,7 +44,7 @@ end)
 -- Peds
 CreateThread(function()
 
-	for k, v in pairs(Config.Peds.Ubicaciones) do
+	for k, v in pairs(Config.Peds.Locations) do
 
 	if Config.HabilitarPeds then
 		local npc = CreatePed(4, 0xD15D7E71, v.x, v.y, v.z, v.h, false, true)
@@ -59,8 +59,8 @@ end)
 
 -- Blips
 CreateThread(function()
-	for i=1, #Config.Tiendas.Ubicaciones, 1 do
-		local blip = AddBlipForCoord(Config.Tiendas.Ubicaciones[i])
+	for i=1, #Config.Shops.Locations, 1 do
+		local blip = AddBlipForCoord(Config.Shops.Locations[i])
 
 		SetBlipSprite (blip, 52)
 		SetBlipDisplay(blip, 4)
@@ -68,7 +68,7 @@ CreateThread(function()
 		SetBlipColour (blip, 0)
 		SetBlipAsShortRange(blip, true)
 		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentSubstringPlayerName("Badulaque")
+		AddTextComponentSubstringPlayerName("Shops")
 		EndTextCommandSetBlipName(blip)
 	end
 end)
