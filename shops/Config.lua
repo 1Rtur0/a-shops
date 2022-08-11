@@ -4,13 +4,13 @@ Config.Align = 'bottom-right'
 Config.Webhook = ''
 
 
--- Opciones
-Config.HabilitarPeds = true
+-- Options
+Config.EnablePeds = true
 
 
--- Ubicaciones
-Config.Tiendas = {
-		Ubicaciones = {
+-- Locations
+Config.Shops = {
+		Locations = {
 			vector3(-707.33, -914.63, 19.22), 
 			vector3(25.71, -1346.15, 29.5), 
 			vector3(-1487.0, -379.32, 40.16),
@@ -31,7 +31,7 @@ Config.Tiendas = {
 
 -- Peds
 Config.Peds = {
-	Ubicaciones = {
+	Locations = {
 		{x = -706.16, y = -914.66, z = 18.22, h = 86.44},
 		{x = -1486.35, y = -377.95, z = 39.16, h = 138.64},
 		{x = 372.96, y = 328.3, z = 102.57, h = 255.86},
@@ -51,12 +51,12 @@ Config.Peds = {
 
 
 -- Items
-Config.ItemsOtros = { 
+Config.ItemsOthers = { 
 	{id = 1, model = 'phone', label = 'Pan', price = 1},
 	{id = 2, model = 'water', label = 'Agua', price = 1}
 }
 
-Config.ItemsBebidas = { 
+Config.ItemsDrinks = { 
 	{id = 1, model = 'bread', label = 'Pan', price = 1},
 	{id = 2, model = 'water', label = 'Agua', price = 1}
 }
@@ -66,7 +66,7 @@ Config.ItemsSnacks = {
 	{id = 2, model = 'water', label = 'Agua', price = 1}
 }
 
-Config.ItemsComidaLista = { 
+Config.ItemsReadyMeal = { 
 	{id = 1, model = 'bread', label = 'Pan', price = 1},
 	{id = 2, model = 'water', label = 'Agua', price = 1}
 }
