@@ -46,7 +46,7 @@ CreateThread(function()
 
 	for k, v in pairs(Config.Peds.Locations) do
 
-	if Config.HabilitarPeds then
+	if Config.EnablePeds then
 		local npc = CreatePed(4, 0xD15D7E71, v.x, v.y, v.z, v.h, false, true)
 		SetEntityHeading(npc, v.h)
 		FreezeEntityPosition(npc, true)
